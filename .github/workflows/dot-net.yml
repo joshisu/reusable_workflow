@@ -19,7 +19,7 @@ on:
 
 jobs:
   build-and-deploy:
-    runs-on: [self-hosted, windows, dotnet]
+    runs-on: windows-latest
     environment: ${{ inputs.environment }}
     steps:
       - uses: actions/checkout@v3
