@@ -24,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: dotnet restore ${{ inputs.project_path }}
-      - run: dotnet build ${{ inputs.project_path }} -c ${{ inputs.build_config }} --no-restore
+      - run: dotnet build ${{ inputs.project_path }} -c ${{ inputs.build_config }} --no-restore -p:OutputPath=./output
       - run: dotnet publish ${{ inputs.project_path }} -c ${{ inputs.build_config }} -o ./output --no-build
       - uses: azure/webapps-deploy@v2
         with:
